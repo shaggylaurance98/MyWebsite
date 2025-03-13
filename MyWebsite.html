@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///C:/Users/mthakar/Downloads/MyWebsite.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Property Photography | Professional Real Estate Photography Services</title>
+  <link rel="stylesheet" href="./MyWebsite_files/all.min.css">
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark-color);
+      background-color: var(--light-color);
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--secondary-color);
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: white;
+      padding: 12px 24px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    /* Header */
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    
+    .logo span {
+      color: var(--secondary-color);
+    }
+    
+    .nav-menu {
+      display: flex;
+    }
+    
+    .nav-menu li {
+      margin-left: 20px;
+    }
+    
+    .nav-menu a {
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 10px 5px;
+      position: relative;
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg') no-repeat center center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease;
+    }
+    
+    /* Services Section */
+    .services {
+      padding: 100px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+    
+    .section-title p {
+      color: var(--dark-color);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .service-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .service-card:hover .service-img img {
+      transform: scale(1.1);
+    }
+    
+    .service-content {
+      padding: 20px;
+    }
+    
+    .service-content h3 {
+      margin-bottom: 10px;
+      color: var(--primary-color);
+    }
+    
+    /* Portfolio Section */
+    .portfolio {
+      padding: 100px 0;
+      background-color: var(--light-color);
+    }
+    
+    .portfolio-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    
+    .portfolio-filter button {
+      background: none;
+      border: none;
+      padding: 8px 20px;
+      margin: 0 5px 10px;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-filter button.active,
+    .portfolio-filter button:hover {
+      background: var(--secondary-color);
+      color: white;
+    }
+    
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    
+    .portfolio-item {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+    
+    .portfolio-overlay-content {
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+    
+    /* Contact Section */
+    .contact {
+      padding: 100px 0;
+      background-color: white;
+    }
+    
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .contact-info h3 {
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    
+    .contact-info p {
+      margin-bottom: 30px;
+    }
+    
+    .contact-details {
+      margin-bottom: 30px;
+    }
+    
+    .contact-details div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .contact-details i {
+      color: var(--secondary-color);
+      font-size: 20px;
+      margin-right: 15px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    
+    /* Booking Section */
+    .booking {
+      padding: 100px 0;
+      background-color: var(--light-color);
+    }
+    
+    .booking-form {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-col h4 {
+      margin-bottom: 20px;
+      font-size: 18px;
+      position: relative;
+    }
+    
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 30px;
+      height: 2px;
+      background: var(--secondary-color);
+    }
+    
+    .footer-col p {
+      margin-bottom: 20px;
+    }
+    
+    .social-links {
+      display: flex;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-color);
+      color: white;
+      border-radius: 50%;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-5px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+        font-size: 24px;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .nav-menu li {
+        margin: 10px 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#" class="logo">Elite<span>Photography</span></a>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#home">Home</a></li>
+        <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#services">Services</a></li>
+        <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#portfolio">Portfolio</a></li>
+        <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#contact">Contact</a></li>
+        <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#booking" class="btn">Book Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Elevate Your Real Estate Listings</h1>
+        <p>Professional photography, virtual tours, and drone footage that showcase properties at their absolute best</p>
+        <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#booking" class="btn">Book Your Session</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>We offer comprehensive photography and videography solutions designed specifically for real estate professionals.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="images/123.jpeg" alt="Professional Property Photography">
+          </div>
+          <div class="service-content">
+            <h3>High-Definition Property Photography</h3>
+            <p>Capture your property's best features with our professional photography services. We use advanced lighting techniques and high-end equipment to make every space look its absolute best.</p>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#booking" class="btn">Book This Service</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="images/234.jpg" alt="Virtual Tours">
+          </div>
+          <div class="service-content">
+            <h3>Interactive Virtual Tours</h3>
+            <p>Give potential buyers an immersive experience with our 360° virtual tours. Allow clients to explore every corner of the property from the comfort of their homes.</p>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#booking" class="btn">Book This Service</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="images/456.jpg" alt="Drone Photography">
+          </div>
+          <div class="service-content">
+            <h3>Aerial Drone Photography &amp; Video</h3>
+            <p>Showcase the property's surroundings, lot size, and exterior features with stunning aerial photography and video captured by our licensed drone operators.</p>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#booking" class="btn">Book This Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Portfolio</h2>
+        <p>Browse through our recent work to see the quality and attention to detail we bring to every property.</p>
+      </div>
+      <div class="portfolio-filter">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="interior">Interior</button>
+        <button data-filter="exterior">Exterior</button>
+        <button data-filter="aerial">Aerial</button>
+        <button data-filter="virtual">Virtual Tours</button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="interior">
+          <img src="images/Living room.jpg" alt="Luxury Living Room">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Luxury Home Interior</h3>
+              <p>Professional lighting to highlight architectural details</p>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="exterior">
+          <img src="images/Home exterior.jpg" alt="Modern Home Exterior">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Contemporary Home Exterior</h3>
+              <p>Twilight photography to capture perfect ambiance</p>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="aerial">
+          <img src="images/aerial view.jpg" alt="Aerial View of Property">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Oceanfront Property</h3>
+              <p>Aerial photography showcasing location and surroundings</p>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="interior">
+          <img src="images/kitchen.jpg" alt="Designer Kitchen">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Gourmet Kitchen</h3>
+              <p>Professional lighting to highlight countertops and appliances</p>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="virtual">
+          <img src="file:///C:/api/placeholder/600/400" alt="Virtual Tour Sample">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Immersive Virtual Tour</h3>
+              <p>Click to experience an interactive walkthrough</p>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="aerial">
+          <img src="file:///C:/api/placeholder/600/400" alt="Drone Video Still">
+          <div class="portfolio-overlay">
+            <div class="portfolio-overlay-content">
+              <h3>Estate Property</h3>
+              <p>Aerial videography showcasing the entire property</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Have questions or need a custom quote? Reach out to our team today.</p>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Let's Connect</h3>
+          <p>We're here to help you showcase properties in their best light. Fill out the form or use our contact details below to get in touch.</p>
+          <div class="contact-details">
+            <div>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>123 Photography Ave, Real Estate City</span>
+            </div>
+            <div>
+              <i class="fas fa-phone"></i>
+              <span>(555) 123-4567</span>
+            </div>
+            <div>
+              <i class="fas fa-envelope"></i>
+              <span>info@eliteprophotography.com</span>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#"><i class="fab fa-facebook-f"></i></a>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#"><i class="fab fa-instagram"></i></a>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" placeholder="Your Name" required="">
+            <input type="email" placeholder="Your Email" required="">
+            <input type="text" placeholder="Subject">
+            <textarea rows="5" placeholder="Your Message" required=""></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <div class="section-title">
+        <h2>Book a Session</h2>
+        <p>Ready to elevate your property listings? Schedule a photography session with us.</p>
+      </div>
+      <div class="booking-form">
+        <form id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" required="">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" required="">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" required="">
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service" required="">
+                <option value="" disabled="" selected="">Select a Service</option>
+                <option value="photography">Property Photography</option>
+                <option value="virtual">Virtual Tour</option>
+                <option value="drone">Drone Photography/Video</option>
+                <option value="package">Complete Package</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Property Address (Optional)</label>
+            <input type="text" id="address" required="">
+          </div>
+          <div class="form-group">
+            <label for="notes">Special Requests or Notes</label>
+            <textarea id="notes" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn">Book Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Elite Photography</h4>
+          <p>Professional real estate photography services dedicated to helping agents showcase properties in their best light.</p>
+          <div class="social-links">
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#"><i class="fab fa-facebook-f"></i></a>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#"><i class="fab fa-instagram"></i></a>
+            <a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#home">Home</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#services">Services</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#portfolio">Portfolio</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#contact">Contact</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#booking">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#">Property Photography</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#">Virtual Tours</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#">Drone Photography</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#">Video Services</a></li>
+            <li><a href="file:///C:/Users/mthakar/Downloads/MyWebsite.html#">Twilight Photography</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Subscribe to our newsletter for tips, special offers, and updates.</p>
+          <form>
+            <input type="email" placeholder="Your Email" required="" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;">
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Elite Property Photography. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // Portfolio Filtering
+    const filterButtons = document.querySelectorAll('.portfolio-filter button');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        const filterValue = button.getAttribute('data-filter');
+        
+        portfolioItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 70,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        if (navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+    
+    // Form Submissions
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+    
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Booking request received! We will confirm your appointment shortly.');
+      this.reset();
+    });
+  </script>
+
+
+
+
+
+
+
+
+</body></html>
